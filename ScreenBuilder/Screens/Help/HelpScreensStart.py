@@ -1,7 +1,7 @@
 '''
 Program: HelpScreenStart.py
 Author : John Hayes
-Date    : Oct, 24 2019
+Date    : Oct, 4 2019
 Synopis: This is the start of the help screens.
 '''
 def HlpStrt():
@@ -15,8 +15,8 @@ def HlpStrt():
     print("			   	      Help ")
     print("")
     print("			   Instructions		1")
-    print("		           Info 		2")
-    print("")
+    print("		           Process 		")
+    print("                           Information          2")
     print("")
     print("")
     print("")
