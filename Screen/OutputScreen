@@ -1,0 +1,34 @@
+'''
+Program: OutputScreen.py
+Author : Programmers: CIS220 Class Fall 2019
+Date    : 06-October-2019
+Synopis: Output screen to display message after it has been encrypted/decrypted
+'''
+def outputScreen():
+    print("CIS220 Project:TheEnigmaMachine          Programmers: CIS220 Class Fall 2019")
+    print("")
+    print("")
+    print("")
+    print("				  Enigma Machine")
+    print("                                  Output Screen")
+    print("")
+    print("			   	      Menu ")
+    print("")
+    print("				 Home		1")
+    print("				 About		2")
+    print("				 Encryption 	3")
+    print("				 Decryption	4")
+    print("				 Help		5")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    sel = input("Select which page you would like to switch to.")
+    return sel
+outputScreen()
+input()
