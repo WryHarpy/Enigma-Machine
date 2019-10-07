@@ -1,1 +1,35 @@
+'''
+Program: WelcomeScreen.py
+Author : Nick Demanche
+Date    : 06-October-2019
+Synopis: This is the welcome screen for the enigma machine
+'''
+def welcomeScreen():
+    print("")
+    print("")
+    print("")
+    print("")
+    print("				  Enigma Machine")
+    print("")
+    print("")
+    print("			   	      Menu ")
+    print("")
+    print("				 Home		1")
+    print("				 About		2")
+    print("				 Encryption 	3")
+    print("				 Decryption	4")
+    print("				 Help		5")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    sel = input("Select which page you would like to switch to.")
+    return sel
+welcomeScreen()
+input()
 
