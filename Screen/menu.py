@@ -1,7 +1,7 @@
 '''
 Program: menu.py
 Author : Quang Hoang
-Date   : 2019-10-1
+Date   : 2019-10-07
 Synopis: This is the menu for the Enigma Machine.
 '''
 def menu():
@@ -12,14 +12,14 @@ def menu():
     print("				  Enigma Machine")
     print("")
     print("")
-    print("			   	      Menu ")
+    print("			   	       Menu ")
     print("")
     print("				 Home		1")
     print("				 About		2")
     print("				 Encryption 	3")
     print("				 Decryption	4")
-    print("				 Help		5")
-    print("")
+    print("				 Setting	5")
+    print("				 Help		6")
     print("")
     print("")
     print("")
