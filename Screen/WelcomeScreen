@@ -5,12 +5,12 @@ Date    : 06-October-2019
 Synopis: This is the welcome screen for the enigma machine
 '''
 def welcomeScreen():
-    print("")
+    print("CIS220 Project:TheEnigmaMachine          Programmers: CIS220 Class Fall 2019")
     print("")
     print("")
     print("")
     print("				  Enigma Machine")
-    print("")
+    print("                                  Welcome Screen")
     print("")
     print("			   	      Menu ")
     print("")
