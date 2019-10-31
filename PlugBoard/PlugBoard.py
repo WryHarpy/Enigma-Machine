@@ -6,25 +6,18 @@
 
 
 import os
-from requests import get
-from bs4 import BeautifulSoup
-   
-    
+
+
 # Open the letter set file and get the letter sets
-    
-with open ("LetterSet.xml") as file:
-    char = BeautifulSoup (file, 'lxml')
-    
 
 def getSet(charSet):
-    doc = eval("char.{}.text".format(charSet))
+    doc = open(charSet, 'r')
+    doc = doc.readlines()
     set = []
     for i in doc:
-        if i != '\n':
-            set.append(i)
-    #print(set)                
+        i = i.strip("\n")
+        set.append(i)
     return set
-
 
 # Get the message
 def getText():
@@ -43,8 +36,8 @@ def getText():
 
 # Run the scrambling and put it to a file
 def runPlugBoard(text):
-    letterSet = getSet("letterset")
-    plugBoard = getSet("plugboard")
+    letterSet = getSet("letterset.txt")
+    plugBoard = getSet("plugboard.txt")
     
     # Check if the file is already exists
     if os.path.exists("encrypt message.txt"):
@@ -70,6 +63,6 @@ def writeMessage():
         print (file[i:i+17], end= '   ')    
 
 
-## M A I N ##     
+# ## M A I N ##
 runPlugBoard(getText())
 writeMessage()
