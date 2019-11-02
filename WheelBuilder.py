@@ -12,17 +12,17 @@ letterSetDict = { i : letterSetList[i] for i in range(0, len(letterSetList))}
 def randomizeList(input):
     # Creates a randomized list of numbers
     randomNumbers = random.sample(range(0, len(input)), len(input))
-    # Takes each number and places the corresponding piece from the letterset into a list
+    # Takes each number and places the corresponding piece from the letter set into a list
     list = []
     for i in randomNumbers:
         list.append(input[i])
-    # Turns the list into a simple string of the new randomized letterset
+    # Turns the list into a simple string of the new randomized letter set
     string = ''
     for i in list:
         string += i
     return string
 
-# Given the amount of wheels you want and the letterset, creates
+# Given the amount of wheels you want and the letter set, creates
 # a dictionary containing each wheel as a key:value Pair
 def wheelBuilder(amount, input):
     wheelDict = {}
@@ -34,8 +34,10 @@ def wheelBuilder(amount, input):
         dict = {key: value}
         wheelDict.update(dict)
         number += 1
+    f = open("evWheels.py", 'w')
+    f.write(str(wheelDict))
+    f.close()
     return wheelDict
 
 
-test = wheelBuilder(5, letterSetDict)
-print(test)
+wheelBuilder(50, letterSetDict)
