@@ -35,7 +35,7 @@ def wheelBuilder(amount, input):
         wheelDict.update(dict)
         number += 1
     f = open("evWheels.py", 'w')
-    f.write(str(wheelDict))
+    f.write('Wheels = ' + str(wheelDict))
     f.close()
     return wheelDict
 
