@@ -2,7 +2,7 @@ import evWheels
 def encryption():
     print('This is the encryption side')
     inbound= 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz -,.'
-    outbound = evWheels.Wheels.get("W1")
+    outbound = evWheels.Wheels.get("w1")
     word = input('enter the word you want to encrypt:')
     wordOut = ''
     for i in range(len(word)):
@@ -14,7 +14,7 @@ def encryption():
     print(wordOut)
 #Second Wheel
     inbound = outbound
-    outbound = evWheels.Wheels.get("W2")
+    outbound = evWheels.Wheels.get("w2")
     word = wordOut
     wordOut = ''
     for i in range(len(word)):
@@ -26,7 +26,7 @@ def encryption():
     print(wordOut) 
 #Third Wheel
     inbound = outbound
-    outbound = evWheels.Wheels.get("W3")
+    outbound = evWheels.Wheels.get("w3")
     word = wordOut
     wordOut = ''
     for i in range(len(word)):
@@ -38,8 +38,8 @@ def encryption():
     print(wordOut)
 def decryption():
     print('This is the decryption side')
-    inbound= evWheels.Wheels.get("W3")
-    outbound = evWheels.Wheels.get("W2")
+    inbound= evWheels.Wheels.get("w3")
+    outbound = evWheels.Wheels.get("w2")
     word = input('enter the word you want to decrypt:')
     wordOut = ''
     for i in range(len(word)):
@@ -51,7 +51,7 @@ def decryption():
     print(wordOut)
 #Second Wheel
     inbound = outbound
-    outbound = evWheels.Wheels.get("W1")
+    outbound = evWheels.Wheels.get("w1")
     word = wordOut
     wordOut = ''
     for i in range(len(word)):
