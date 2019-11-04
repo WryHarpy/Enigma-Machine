@@ -1,0 +1,5 @@
+encry = open("C:\\Users\\evanr\\Documents\\whatEnc.txt","r")
+def read():
+    if encry.mode == "r":
+        contents = encry.read()
+        return(contents)
