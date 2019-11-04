@@ -79,3 +79,12 @@ def decryption():
 #Calling
 answer = '0'
 while answer == '0':
+    print('Press 1 for encrypt, or 2 for decrypt.')
+    answer = input()
+    if answer == '1':
+        encryption()
+    if answer == '2':
+        decryption()
+    else:
+        answer = '0'
+        continue
