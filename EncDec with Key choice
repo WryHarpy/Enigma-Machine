@@ -1,0 +1,81 @@
+import evWheels
+import whatEnc
+whCh1,whCh2,whCh3=input("What wheels will you be using. Please select them in the format of '#-#-#'").split("-")
+print(whCh1,whCh2,whCh3)
+def encryption():
+    print('This is the encryption side')
+    inbound= 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz -,.'
+    outbound = evWheels.Wheels.get("W"+whCh1)
+    word = whatEnc.read()
+    wordOut = ''
+    for i in range(len(word)):
+        count = 0
+        for j in range(len(inbound)):
+            if (word[i] == inbound[j]):
+                count = j
+        wordOut = wordOut + outbound[count]
+    print(wordOut)
+#Second Wheel
+    inbound = outbound
+    outbound = evWheels.Wheels.get("W"+whCh2)
+    word = wordOut
+    wordOut = ''
+    for i in range(len(word)):
+        count = 0
+        for j in range(len(inbound)):
+            if (word[i] == inbound[j]):
+                count = j
+        wordOut = wordOut + outbound[count]
+    print(wordOut) 
+#Third Wheel
+    inbound = outbound
+    outbound = evWheels.Wheels.get("W"+whCh3)
+    word = wordOut
+    wordOut = ''
+    for i in range(len(word)):
+        count = 0
+        for j in range(len(inbound)):
+            if (word[i] == inbound[j]):
+                count = j
+        wordOut = wordOut + outbound[count]
+    print(wordOut)
+def decryption():
+    print('This is the decryption side')
+    inbound= evWheels.Wheels.get("W"+whCh3)
+    outbound = evWheels.Wheels.get("W"+whCh2)
+    word = input("Enter the message you would like to decrypt: ")
+    wordOut = ''
+    for i in range(len(word)):
+        count = 0
+        for j in range(len(inbound)):
+            if (word[i] == inbound[j]):
+                count = j
+        wordOut = wordOut + outbound[count]
+    print(wordOut)
+#Second Wheel
+    inbound = outbound
+    outbound = evWheels.Wheels.get("W"+whCh1)
+    word = wordOut
+    wordOut = ''
+    for i in range(len(word)):
+        count = 0
+        for j in range(len(inbound)):
+            if (word[i] == inbound[j]):
+                count = j
+        wordOut = wordOut + outbound[count]
+    print(wordOut) 
+#Third Wheel
+    inbound = outbound
+    outbound = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz -,.' 
+    word = wordOut
+    wordOut = ''
+    for i in range(len(word)):
+        count = 0
+        for j in range(len(inbound)):
+            if (word[i] == inbound[j]):
+                count = j
+        wordOut = wordOut + outbound[count]
+    print(wordOut)
+#Calling
+answer = '0'
+while answer == '0':
