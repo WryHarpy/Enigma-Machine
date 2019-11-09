@@ -1,9 +1,10 @@
 import evWheels
+import whatEnc
 def encryption():
     print('This is the encryption side')
     inbound= 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz -,.'
-    outbound = evWheels.Wheels.get("w1")
-    word = input('enter the word you want to encrypt:')
+    outbound = evWheels.Wheels.get("W1")
+    word = whatEnc.read()
     wordOut = ''
     for i in range(len(word)):
         count = 0
@@ -14,7 +15,7 @@ def encryption():
     print(wordOut)
 #Second Wheel
     inbound = outbound
-    outbound = evWheels.Wheels.get("w2")
+    outbound = evWheels.Wheels.get("W2")
     word = wordOut
     wordOut = ''
     for i in range(len(word)):
@@ -26,7 +27,7 @@ def encryption():
     print(wordOut) 
 #Third Wheel
     inbound = outbound
-    outbound = evWheels.Wheels.get("w3")
+    outbound = evWheels.Wheels.get("W3")
     word = wordOut
     wordOut = ''
     for i in range(len(word)):
@@ -38,9 +39,9 @@ def encryption():
     print(wordOut)
 def decryption():
     print('This is the decryption side')
-    inbound= evWheels.Wheels.get("w3")
-    outbound = evWheels.Wheels.get("w2")
-    word = input('enter the word you want to decrypt:')
+    inbound= evWheels.Wheels.get("W3")
+    outbound = evWheels.Wheels.get("W2")
+    word = input("Enter the message you would like to decrypt: ")
     wordOut = ''
     for i in range(len(word)):
         count = 0
@@ -51,7 +52,7 @@ def decryption():
     print(wordOut)
 #Second Wheel
     inbound = outbound
-    outbound = evWheels.Wheels.get("w1")
+    outbound = evWheels.Wheels.get("W1")
     word = wordOut
     wordOut = ''
     for i in range(len(word)):
@@ -65,7 +66,6 @@ def decryption():
     inbound = outbound
     outbound = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz -,.' 
     word = wordOut
-
     wordOut = ''
     for i in range(len(word)):
         count = 0
@@ -73,7 +73,7 @@ def decryption():
             if (word[i] == inbound[j]):
                 count = j
         wordOut = wordOut + outbound[count]
-    print(wordOut)     
+    print(wordOut)
 #Calling
 answer = '0'
 while answer == '0':
