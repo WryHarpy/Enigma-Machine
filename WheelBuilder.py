@@ -34,10 +34,10 @@ def wheelBuilder(amount, input):
         dict = {key: value}
         wheelDict.update(dict)
         number += 1
-    f = open("evWheels.py", 'w')
+    f = open("WheelDictionary.py", 'w')
     f.write('Wheels = ' + str(wheelDict))
     f.close()
     return wheelDict
 
 
-wheelBuilder(50, letterSetDict)
+wheelBuilder(100, letterSetDict)
