@@ -30,8 +30,8 @@ def about():
     print("*                                                                              *")
     print("********************************************************************************")
     sel = input("")
-    import screen_MAIN
-    screen_MAIN.getOption("Home")
+    import MAIN
+    MAIN.getOption("Home")
     return sel
 
 def home():
@@ -51,7 +51,7 @@ def home():
     print("")
     print("")
     print("                     Encryption [1]             Decryption [2]")
-    print("                                                 (In process)")
+    print("")
     print("")
     print("")
     print("")
@@ -73,7 +73,7 @@ def menu():
     print("")
     print("                             Home                 1")
     print("                             Encryption           2")
-    print("                             Decryption           3 (In process)")
+    print("                             Decryption           3")
     print("")
     print("")
     print("")
@@ -153,7 +153,7 @@ def settingKey():
     print("{:^80}".format("Key"))
     print("")
     print("{:^80}".format("Enter your key below"))
-    print("")
+    print("{:^80}".format("with this format: #-#-#"))
     print("")
     print("")
     print("")
@@ -209,8 +209,8 @@ def encryptionKey():
     print("")
     print("{:^80}".format("Encryption"))
     print("")
-    print("{:^80}".format("Enter your key or hit Enter to generate key"))
-    print("")
+    print("{:^80}".format("Enter your key with this format: #-#-#"))
+    print("{:^80}".format("or hit Enter to generate key"))
     print("")
     print("")
     print("")
@@ -258,8 +258,8 @@ def encryption():
     print("")
     print("")
     print("")
-    sel = input("Enter Message:  ")
-    return sel
+    message = input("Enter Message:  ")
+    return message, key
 
 def decryption():
     key = settingKey()
@@ -286,21 +286,22 @@ def decryption():
     print("")
     print("")
     print("")
-    sel = input("Enter Message:  ")
+    message = input("Enter Message:  ")
 
-    return sel
+    return message, key
 
-def message(doc):
+def message(doc, key):
     print("CIS220 Class Fall 2019                                 Help 0 | About i | Menu x")
     print("")
     print("")
     print("")
-    print("				  Enigma Machine")
+    print("{:^80}".format("Enigma Machine"))
     print("")
     print("")
-    print("			   	    Message ")
+    print("{:^80}".format("Message"))
+    print("{:^80}".format("Key: " + key))
     print("")
-    mtyLine = 13 - len(doc)
+    mtyLine = 12 - len(doc)
     for i in doc:
         print(i, end='')
     for i in range(mtyLine):
