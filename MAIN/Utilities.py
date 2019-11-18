@@ -4,13 +4,14 @@
 
 # Some handy tools
 
+# ###########################################################################################################################################################################
 # Open the letter set file and get the letter sets
 def getSet(charSet):
     doc = open(charSet, 'r')
     set = doc.read()
     return set
 
-
+# ###########################################################################################################################################################################
 # Re- write the message to file and screen
 def writeMessage():
     file = open("encrypt message.txt", 'r')
@@ -22,6 +23,7 @@ def writeMessage():
         print(file[i:i + 17], end='   ')
 
 
+# ###########################################################################################################################################################################
 # Get the message
 def getText():
     # text = input(str("Enter your message: "))
@@ -35,6 +37,8 @@ def getText():
         text = text.replace(i, '')
     return text
 
+
+# ###########################################################################################################################################################################
 # Write message into a text file doc.txt. This write lines to fit the screen
 def writeDoc(message):
     #message = open("message.txt", 'r')
@@ -44,6 +48,8 @@ def writeDoc(message):
         doc.write("       " + message[i:i + 15] + "  " + message[i + 15:i + 30] + "  " + message[i + 30:i + 45] + "  " + message[i + 45:i + 60] + "       \n")
     doc.close()
 
+
+# ###########################################################################################################################################################################
 # Get the text from doc.txt
 def getDoc():
     f = open("doc.txt", 'r')
@@ -51,21 +57,14 @@ def getDoc():
     f.close()
     return doc
 
+
+# ###########################################################################################################################################################################
 # Put the message into an array
 def getMessage(message):
+    message, key = message
     doc = []
     for i in range(0, len(message), 60):
         doc.append("       " + message[i:i + 15] + "  " + message[i + 15:i + 30] + "  " + message[i + 30:i + 45] + "  " + message[i + 45:i + 60] + "       \n")
-    return doc
-
-'''
-def display(doc):
-    if len(doc) < 13:
-        message(doc)
-    if len(doc) > 13:
-        for i in range(0, len(doc), 13):
-            doc = doc[i:i+13]
-            message(doc)
-'''
+    return doc, key
 
 
