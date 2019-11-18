@@ -3,39 +3,46 @@
 # 27 OCT 2019
 
 # This is the encryption
-import generateKey
 import charSet
 from Screens import *
 from Utilities import getMessage
 
 
-key = generateKey.getKey()
+
 def encrypt():
-    text = encryption()
-    print(text)
+    message, tempKey = encryption()
+    print(message)
+    print(tempKey)
+    key = tempKey.split("-")
     encryptMessage = ''
-    for i in text:
-        inbound = charSet.charSet["letterSet"]
-        outbound = charSet.charSet["plugBoard"]
+    # Plugboard
+    for i in message:
+        inbound = charSet.letterSet
+        outbound = charSet.plugBoard
         index = inbound.index(i)
-        encryptMessage = encryptMessage + outbound[index]
-        #wordOut = outbound[index]
-
-    print(encryptMessage)
-    return encryptMessage
-'''
-        for k in key:
-            inbound = outbound
-            outbound = charSet.charSet["Rotor_{}".format(k)]
-            for x in wordOut:
-                index = inbound.index(x)
-                encryptMessage = encryptMessage + outbound[index]
-        #print(wordOut, end='')
-'''
-
+        text = outbound[index]
+        # Wheel 1
+        for i in text:
+            inbound = charSet.plugBoard
+            outbound = eval("charSet.Rotor_{}".format(key[0]))
+            index = inbound.index(i)
+            text =  outbound[index]
+            # Wheel 2
+            for i in text:
+                inbound = eval("charSet.Rotor_{}".format(key[0]))
+                outbound = eval("charSet.Rotor_{}".format(key[1]))
+                index = inbound.index(i)
+                text =  outbound[index]
+                # Wheel 3
+                for i in text:
+                    inbound = eval("charSet.Rotor_{}".format(key[1]))
+                    outbound = eval("charSet.Rotor_{}".format(key[2]))
+                    index = inbound.index(i)
+                    encryptMessage = encryptMessage + outbound[index]
+    return encryptMessage, tempKey
 
 def encryptionMessage():
-    docLines = getMessage(encrypt())
-    option = message(docLines)
+    docLines, key = getMessage(encrypt())
+    option = message(docLines, key)
     return option
 

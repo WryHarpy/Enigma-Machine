@@ -1,4 +1,4 @@
-# Program : screen_MAIN.py
+# Program : MAIN.py
 # Author  : Quang Hoang
 # Date    : 2019-10-07
 # Synopsis: This run a screen when called
@@ -6,6 +6,7 @@
 from Utilities import *
 from Screens import *
 from encrypt import *
+from decrypt import *
 import os
 
 
@@ -19,14 +20,20 @@ class Screen:
         self.op3 = op3
 
     def viewScr(self):
-        os.system("clear")
+        try:
+            os.system("clear")
+        except:
+            os.system("cls")
         option = self.scr()
 
         return option
 
 
 def getOption(x):
-    os.system("clear")
+    try:
+        os.system("clear")
+    except:
+        os.system("cls")
 
     option = eval(str(x)).viewScr()
 
@@ -52,23 +59,18 @@ def getOption(x):
 # ################# SET UP SCREEN #################
 Home = Screen(home,
                "Encryption",
-               None, None)
+               "Decryption", None)
 
 About = Screen(about, None, None, None)
 
 Menu = Screen(menu,
             "Home",
             "Encryption",
-            None)
+            "Decryption")
 
 PlugBoard = Screen(settingPlugBoard, None, None, None)
 Encryption = Screen(encryptionMessage, None, None, None)
-Decryption = Screen(decryption, None, None, None)
+Decryption = Screen(decryptionMessage, None, None, None)
 Key = Screen(settingKey, None, None, None)
 Help = Screen(helpScr, None, None, None)
 Message = Screen(message, None, None, None)
-
-
-# >>>>>>>>>>>>>>>>> M A I N <<<<<<<<<<<<<<<<<
-os.system("clear")
-about()

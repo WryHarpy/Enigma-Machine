@@ -8,8 +8,9 @@ import random
 
 def getKey():
 
-    key = [1,2,3,4]
-    random.shuffle(key)
+    key = []
+    for i in range(1,4):
+        key.append(str(random.randint(1,100)))
+    key = '-'.join(key)
     return key
-
 
