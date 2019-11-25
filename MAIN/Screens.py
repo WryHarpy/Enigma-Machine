@@ -259,6 +259,13 @@ def encryption():
     print("")
     print("")
     message = input("Enter Message:  ")
+    from checkDoc import checkDoc
+    check = checkDoc(message)
+    if check == "":
+        pass
+    if check != "":
+        error("Invalid character: {}".format(check))
+        encryption()
     return message, key
 
 def decryption():
@@ -309,3 +316,31 @@ def message(doc, key):
     print("")
     sel = input("Choose an option to proceed: ")
     return sel
+
+
+def error(log):
+    print("CIS220 Class Fall 2019                                 Help 0 | About i | Menu x")
+    print("")
+    print("")
+    print("")
+    print("{:^80}".format("Enigma Machine"))
+    print("")
+    print("")
+    print("{:^80}".format("Error"))
+    print("")
+    print("")
+    print("{:^80}".format(log))
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    input("Hit Enter to go back")
+

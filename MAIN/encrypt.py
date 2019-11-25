@@ -8,7 +8,6 @@ from Screens import *
 from Utilities import getMessage
 
 
-
 def encrypt():
     message, tempKey = encryption()
     print(message)
