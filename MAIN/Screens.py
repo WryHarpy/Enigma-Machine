@@ -323,13 +323,7 @@ def encryption():
     print("")
     message = input("Enter Message:  ")
     from checkDoc import checkDoc
-    check = checkDoc(message)
-    if check == "":
-        pass
-    if check != "":
-        error("Invalid character: {}".format(check))
-        import MAIN
-        MAIN.getOption("Encryption")
+    checkDoc(message, "Encryption")
     return message, key
 
 
