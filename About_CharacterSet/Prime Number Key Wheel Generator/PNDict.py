@@ -37,7 +37,7 @@ def createFile(input):
     randomized = randomizeList(initial)
     primeNumberDict = {}
     number = 1
-    while number < len(input):
+    while number < len(randomized):
         key = number
         value = randomized[number]
         dict = {key: value}
