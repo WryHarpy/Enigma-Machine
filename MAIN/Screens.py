@@ -5,6 +5,7 @@ Date   : 2019-10-07
 Synopis: This contain all the screens
 '''
 
+
 def about():
     print("")
     print("********************************************************************************")
@@ -34,6 +35,7 @@ def about():
     MAIN.getOption("Home")
     return sel
 
+
 def home():
     print("CIS220 Class Fall 2019                                 Help 0 | About i | Menu x")
     print("")
@@ -60,6 +62,7 @@ def home():
     print("")
     sel = input("Choose an option to proceed: ")
     return sel
+
 
 def menu():
     print("CIS220 Class Fall 2019                                 Help 0 | About i | Menu x")
@@ -88,6 +91,7 @@ def menu():
     sel = input("Choose an option to proceed: ")
     return sel
 
+
 def setting():
     print("CIS220 Class Fall 2019                                 Help 0 | About i | Menu x")
     print("")
@@ -114,6 +118,7 @@ def setting():
     print("")
     sel = input("Choose an option to proceed: ")
     return sel
+
 
 def settingPlugBoard():
     print("CIS220 Class Fall 2019                                 Help 0 | About i | Menu x")
@@ -142,6 +147,7 @@ def settingPlugBoard():
     sel = input("Enter your new Plug Board name here: ")
     return sel
 
+
 def settingKey():
     print("CIS220 Class Fall 2019                                 Help 0 | About i | Menu x")
     print("")
@@ -169,6 +175,7 @@ def settingKey():
     sel = input("Enter Key:    ")
     return sel
 
+
 def helpScr():
     print("CIS220 Class Fall 2019                                 Help 0 | About i | Menu x")
     print("")
@@ -179,9 +186,9 @@ def helpScr():
     print("")
     print("{:^80}".format("Help"))
     print("")
-    print("			   Help instructions will be up soon.")
-    print("			   Sorry for any inconvenient.")
-    print("            ")
+    print("{:^80}".format("Choose Options             1"))
+    print("{:^80}".format("Key Format                 2"))
+    print("")
     print("")
     print("")
     print("")
@@ -197,8 +204,63 @@ def helpScr():
     return sel
 
 
+def helpOption():
+    print("CIS220 Class Fall 2019                                 Help 0 | About i | Menu x")
+    print("")
+    print("")
+    print("")
+    print("{:^80}".format("Enigma Machine"))
+    print("")
+    print("")
+    print("{:^80}".format("Help"))
+    print("")
+    print("             Choose option:")
+    print("                General options are given on top of each screen.")
+    print("                Additional options display inside the screens.")
+    print("                To choose the option, enter the given option.")
+    print("                Example: Help 0")
+    print("                   0 is the option for help")
+    print("                   enter 0 to get help")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    sel = input("Choose an option to proceed: ")
+    return sel
+
+
+def helpKey():
+    print("CIS220 Class Fall 2019                                 Help 0 | About i | Menu x")
+    print("")
+    print("")
+    print("")
+    print("{:^80}".format("Enigma Machine"))
+    print("")
+    print("")
+    print("{:^80}".format("Help"))
+    print("")
+    print("             Key Format:")
+    print("                The key format is #-#-#")
+    print("                Each \"#\" is represent a digit of the key.")
+    print("                Each key digit need to be separate by \"-\".")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    sel = input("Choose an option to proceed: ")
+    return sel
+
+
 def encryptionKey():
-    
     from generateKey import getKey
     print("CIS220 Class Fall 2019                                 Help 0 | About i | Menu x")
     print("")
@@ -232,6 +294,7 @@ def encryptionKey():
         xkey = xkey + str(i)
     key = xkey    
     return key
+
 
 def encryption():
     key = encryptionKey()
@@ -269,6 +332,7 @@ def encryption():
         MAIN.getOption("Encryption")
     return message, key
 
+
 def decryption():
     key = settingKey()
     print("CIS220 Class Fall 2019                                 Help 0 | About i | Menu x")
@@ -297,6 +361,7 @@ def decryption():
     message = input("Enter Message:  ")
 
     return message, key
+
 
 def message(doc, key):
     print("CIS220 Class Fall 2019                                 Help 0 | About i | Menu x")

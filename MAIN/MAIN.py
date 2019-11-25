@@ -67,10 +67,13 @@ Menu = Screen(menu,
             "Home",
             "Encryption",
             "Decryption")
-
+Help = Screen(helpScr,
+              "Help_Option",
+              "Help_Key", None)
+Help_Option = Screen(helpOption, None, None, None)
+Help_Key = Screen(helpKey, None, None, None)
 PlugBoard = Screen(settingPlugBoard, None, None, None)
 Encryption = Screen(encryptionMessage, None, None, None)
 Decryption = Screen(decryptionMessage, None, None, None)
 Key = Screen(settingKey, None, None, None)
-Help = Screen(helpScr, None, None, None)
 Message = Screen(message, None, None, None)
