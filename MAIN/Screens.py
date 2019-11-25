@@ -265,7 +265,8 @@ def encryption():
         pass
     if check != "":
         error("Invalid character: {}".format(check))
-        encryption()
+        import MAIN
+        MAIN.getOption("Encryption")
     return message, key
 
 def decryption():
@@ -308,12 +309,13 @@ def message(doc, key):
     print("{:^80}".format("Message"))
     print("{:^80}".format("Key: " + key))
     print("")
-    mtyLine = 12 - len(doc)
+    mtyLine = 11 - len(doc)
     for i in doc:
         print(i, end='')
     for i in range(mtyLine):
         print("")
     print("")
+    print("Hit Enter to go back, or")
     sel = input("Choose an option to proceed: ")
     return sel
 
