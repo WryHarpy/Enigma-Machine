@@ -4,10 +4,11 @@ Author : Quang Hoang
 Date   : 2019-11-24
 Synopis: This module will check for the invalid character
 '''
+from Screens import error
 
 from charSet import letterSet
 
-def checkDoc(doc):
+def checkDoc(doc,scr):
     invalidChar = ""
     for i in doc:
         if i in letterSet:
@@ -15,7 +16,8 @@ def checkDoc(doc):
         if i not in letterSet:
             invalidChar = invalidChar + i
 
-    return invalidChar
-
-
-
+    if invalidChar != "":
+        error("Invalid character: {}".format(invalidChar))
+        import MAIN
+        MAIN.getOption(scr)
+        input()
