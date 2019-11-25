@@ -1,7 +1,7 @@
 import evWheels
 #importing the wheels
 arr = [] 
-with open("spn.txt") as file:
+with open("scrambledPrimeNumbers.txt") as file:
     for line in file: 
          line = int(line)
          arr.append(line) 
