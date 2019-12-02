@@ -10,7 +10,7 @@ def getKey():
 
     key = []
     for i in range(1,4):
-        key.append(str(random.randint(1,100)))
+        key.append(str(random.randint(1,665)))
     key = '-'.join(key)
     return key
 

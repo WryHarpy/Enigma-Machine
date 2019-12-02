@@ -160,6 +160,7 @@ def settingKey():
     print("")
     print("{:^80}".format("Enter your key below"))
     print("{:^80}".format("with this format: #-#-#"))
+    print("{:^80}".format("The range is from 1 to 665"))
     print("")
     print("")
     print("")
@@ -171,9 +172,16 @@ def settingKey():
     print("")
     print("")
     print("")
-    print("")
-    sel = input("Enter Key:    ")
-    return sel
+    key = input("Enter Key:    ")
+    key = key.split("-")
+    temp = []
+    for i in key:
+        i = i.lstrip("0")
+        temp.append(i)
+    key = '-'.join(temp)
+    from checkKey import checkKey
+    checkKey(key, "Decryption")
+    return key
 
 
 def helpScr():
@@ -245,8 +253,8 @@ def helpKey():
     print("             Key Format:")
     print("                The key format is #-#-#")
     print("                Each \"#\" is represent a digit of the key.")
+    print("                The range is from 1 to 665.")
     print("                Each key digit need to be separate by \"-\".")
-    print("")
     print("")
     print("")
     print("")
@@ -271,7 +279,8 @@ def encryptionKey():
     print("")
     print("{:^80}".format("Encryption"))
     print("")
-    print("{:^80}".format("Enter your key with this format: #-#-#"))
+    print("{:^80}".format("Enter your key in this format: #-#-#"))
+    print("{:^80}".format("The range is from 1 to 665"))
     print("{:^80}".format("or hit Enter to generate key"))
     print("")
     print("")
@@ -284,15 +293,18 @@ def encryptionKey():
     print("")
     print("")
     print("")
-    print("")
-    key = input("Enter Key:  ")
-    
+    key = input("Enter Key:    ")
     if key == '':
         key = getKey()
-    xkey = ''
+    key = key.split("-")
+    temp = []
     for i in key:
-        xkey = xkey + str(i)
-    key = xkey    
+        i = i.lstrip("0")
+        temp.append(i)
+    key = '-'.join(temp)
+    from checkKey import checkKey
+    checkKey(key, "Encryption")
+
     return key
 
 
@@ -310,7 +322,7 @@ def encryption():
     print("{:^80}".format("Enter your message below"))
     print("{:^80}".format("Key: " + key))
     print("")
-    print("            ")
+    print("")
     print("")
     print("")
     print("")
@@ -341,7 +353,7 @@ def decryption():
     print("{:^80}".format("Enter your message below"))
     print("{:^80}".format("Key: " + key))
     print("")
-    print("            ")
+    print("")
     print("")
     print("")
     print("")
@@ -353,7 +365,8 @@ def decryption():
     print("")
     print("")
     message = input("Enter Message:  ")
-
+    from checkDoc import checkDoc
+    checkDoc(message, "Decryption")
     return message, key
 
 

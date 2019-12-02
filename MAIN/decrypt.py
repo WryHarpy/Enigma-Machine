@@ -1,12 +1,13 @@
 import charSet
 from Screens import *
+from Utilities import getKey
+
 
 def decrypt():
     message, tempKey = decryption()
     message = message.replace("  ", "")
-    print(message)
-    print(tempKey)
     key = tempKey.split("-")
+    key = getKey(key)
     decryptMessage = ''
     # Wheel 3
     for i in message:

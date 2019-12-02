@@ -68,3 +68,14 @@ def getMessage(message):
     return doc, key
 
 
+# ###########################################################################################################################################################################
+def getKey(key):
+    from primeNumbers import primeNumbers
+    temp = []
+    for i in key:
+        i = primeNumbers[eval(i)]%3
+        temp.append(str(i))
+
+    return temp
+
+

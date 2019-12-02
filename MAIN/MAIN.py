@@ -5,8 +5,8 @@
 
 from Utilities import *
 from Screens import *
-from encrypt import *
-from decrypt import *
+from encrypt import encryptionMessage
+from decrypt import decryptionMessage
 import os
 
 

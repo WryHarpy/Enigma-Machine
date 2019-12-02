@@ -5,14 +5,13 @@
 # This is the encryption
 import charSet
 from Screens import *
-from Utilities import getMessage
+from Utilities import getMessage, getKey
 
 
 def encrypt():
     message, tempKey = encryption()
-    print(message)
-    print(tempKey)
     key = tempKey.split("-")
+    key = getKey(key)
     encryptMessage = ''
     # Plugboard
     for i in message:
@@ -39,6 +38,7 @@ def encrypt():
                     index = inbound.index(i)
                     encryptMessage = encryptMessage + outbound[index]
     return encryptMessage, tempKey
+
 
 def encryptionMessage():
     docLines, key = getMessage(encrypt())
