@@ -63,8 +63,13 @@ def getDoc():
 def getMessage(message):
     message, key = message
     doc = []
+    count = 0
     for i in range(0, len(message), 60):
-        doc.append("       " + message[i:i + 15] + "  " + message[i + 15:i + 30] + "  " + message[i + 30:i + 45] + "  " + message[i + 45:i + 60] + "       \n")
+        if len(doc) < count + 1:
+            doc.insert(count, [])
+        doc[count].append("       " + message[i:i + 15] + "  " + message[i + 15:i + 30] + "  " + message[i + 30:i + 45] + "  " + message[i + 45:i + 60] + "       \n")
+        if len(doc[count]) == 9:
+            count += 1
     return doc, key
 
 

@@ -24,13 +24,13 @@ def encrypt():
             inbound = charSet.plugBoard
             outbound = eval("charSet.Rotor_{}".format(key[0]))
             index = inbound.index(i)
-            text =  outbound[index]
+            text = outbound[index]
             # Wheel 2
             for i in text:
                 inbound = eval("charSet.Rotor_{}".format(key[0]))
                 outbound = eval("charSet.Rotor_{}".format(key[1]))
                 index = inbound.index(i)
-                text =  outbound[index]
+                text = outbound[index]
                 # Wheel 3
                 for i in text:
                     inbound = eval("charSet.Rotor_{}".format(key[1]))
@@ -42,6 +42,13 @@ def encrypt():
 
 def encryptionMessage():
     docLines, key = getMessage(encrypt())
-    option = message(docLines, key)
+    option = str
+    for i in range(len(docLines)):
+        if i == len(docLines)-1:
+            end = "Hit Enter or choose an option to proceed: "
+            option = message(docLines[len(docLines)-1], key, end)
+        else:
+            end = "Hit Enter to continue..."
+            message(docLines[i], key, end)
     return option
 

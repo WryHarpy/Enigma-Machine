@@ -370,7 +370,7 @@ def decryption():
     return message, key
 
 
-def message(doc, key):
+def message(doc, key, end):
     print("CIS220 Class Fall 2019                                 Help 0 | About i | Menu x")
     print("")
     print("")
@@ -387,8 +387,8 @@ def message(doc, key):
     for i in range(mtyLine):
         print("")
     print("")
-    print("Hit Enter to go back, or")
-    sel = input("Choose an option to proceed: ")
+    print("")
+    sel = input("{}".format(end))
     return sel
 
 
