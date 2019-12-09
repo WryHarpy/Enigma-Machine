@@ -12,12 +12,13 @@ import os
 
 class Screen:
 
-    def __init__(self, scr, op1, op2, op3):
+    def __init__(self, scr, op1, op2, op3, op4):
 
         self.scr = scr
         self.op1 = op1
         self.op2 = op2
         self.op3 = op3
+        self.op4 = op4
 
     def viewScr(self):
         try:
@@ -50,6 +51,8 @@ def getOption(x):
             getOption(eval(x).op2)
         if option == "3":
             getOption(eval(x).op3)
+        if option == "4":
+            getOption(eval(x).op4)
         else:
             getOption(x)
     except AttributeError or TypeError:
@@ -59,21 +62,23 @@ def getOption(x):
 # ################# SET UP SCREEN #################
 Home = Screen(home,
                "Encryption",
-               "Decryption", None)
+               "Decryption", None, None)
 
-About = Screen(about, None, None, None)
+About = Screen(about, None, None, None, None)
 
 Menu = Screen(menu,
             "Home",
             "Encryption",
-            "Decryption")
+            "Decryption",
+            "Exit")
 Help = Screen(helpScr,
               "Help_Option",
-              "Help_Key", None)
-Help_Option = Screen(helpOption, None, None, None)
-Help_Key = Screen(helpKey, None, None, None)
-PlugBoard = Screen(settingPlugBoard, None, None, None)
-Encryption = Screen(encryptionMessage, None, None, None)
-Decryption = Screen(decryptionMessage, None, None, None)
-Key = Screen(settingKey, None, None, None)
-Message = Screen(message, None, None, None)
+              "Help_Key", None, None)
+Help_Option = Screen(helpOption, None, None, None, None)
+Help_Key = Screen(helpKey, None, None, None, None)
+PlugBoard = Screen(settingPlugBoard, None, None, None, None)
+Encryption = Screen(encryptionMessage, None, None, None, None)
+Decryption = Screen(decryptionMessage, None, None, None, None)
+Key = Screen(settingKey, None, None, None, None)
+Message = Screen(message, None, None, None, None)
+Exit = Screen(closePGR, None, None, None, None)

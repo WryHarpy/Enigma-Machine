@@ -44,7 +44,7 @@ def home():
     print("{:^80}".format("Enigma Machine"))
     print("")
     print("")
-    print("")			   	      
+    print("")
     print("                         Welcome to the Enigma Machine!")
     print("                         This is the software version of")
     print("                         the Enigma Machine used in WWII.")
@@ -77,7 +77,7 @@ def menu():
     print("                             Home                 1")
     print("                             Encryption           2")
     print("                             Decryption           3")
-    print("")
+    print("                             Exit                 4")
     print("")
     print("")
     print("")
@@ -179,7 +179,7 @@ def settingKey():
         i = i.lstrip("0")
         temp.append(i)
     key = '-'.join(temp)
-    from checkKey import checkKey
+    from Utilities import checkKey
     checkKey(key, "Decryption")
     return key
 
@@ -253,7 +253,7 @@ def helpKey():
     print("             Key Format:")
     print("                The key format is #-#-#")
     print("                Each \"#\" is represent a digit of the key.")
-    print("                The range is from 1 to 665.")
+    print("                The range is from 1 to 664.")
     print("                Each key digit need to be separate by \"-\".")
     print("")
     print("")
@@ -280,7 +280,7 @@ def encryptionKey():
     print("{:^80}".format("Encryption"))
     print("")
     print("{:^80}".format("Enter your key in this format: #-#-#"))
-    print("{:^80}".format("The range is from 1 to 665"))
+    print("{:^80}".format("The range is from 1 to 664"))
     print("{:^80}".format("or hit Enter to generate key"))
     print("")
     print("")
@@ -302,7 +302,7 @@ def encryptionKey():
         i = i.lstrip("0")
         temp.append(i)
     key = '-'.join(temp)
-    from checkKey import checkKey
+    from Utilities import checkKey
     checkKey(key, "Encryption")
 
     return key
@@ -319,8 +319,11 @@ def encryption():
     print("")
     print("{:^80}".format("Encryption"))
     print("")
-    print("{:^80}".format("Enter your message below"))
     print("{:^80}".format("Key: " + key))
+    print("{:^80}".format("Enter your message or text file below"))
+    print("{:^80}".format("Text file path example:"))
+    print("{:^80}".format(r"MAC: /some_folder/textFile.txt "))
+    print("{:^80}".format(r"  PC: C:\some_folder\textFile.txt"))
     print("")
     print("")
     print("")
@@ -330,12 +333,9 @@ def encryption():
     print("")
     print("")
     print("")
-    print("")
-    print("")
-    print("")
-    message = input("Enter Message:  ")
-    from checkDoc import checkDoc
-    checkDoc(message, "Encryption")
+    text = input("Enter message or text file:  ")
+    from messageProcess import messageProcess
+    message = messageProcess(text, "Encryption")
     return message, key
 
 
@@ -350,8 +350,11 @@ def decryption():
     print("")
     print("{:^80}".format("Decryption"))
     print("")
-    print("{:^80}".format("Enter your message below"))
     print("{:^80}".format("Key: " + key))
+    print("{:^80}".format("Enter your message or text file below"))
+    print("{:^80}".format("Text file path example:"))
+    print("{:^80}".format(r"MAC: /some_folder/textFile.txt "))
+    print("{:^80}".format(r"  PC: C:\some_folder\textFile.txt"))
     print("")
     print("")
     print("")
@@ -361,12 +364,9 @@ def decryption():
     print("")
     print("")
     print("")
-    print("")
-    print("")
-    print("")
-    message = input("Enter Message:  ")
-    from checkDoc import checkDoc
-    checkDoc(message, "Decryption")
+    text = input("Enter message or text file:  ")
+    from messageProcess import messageProcess
+    message = messageProcess(text, "Decryption")
     return message, key
 
 
@@ -383,7 +383,7 @@ def message(doc, key, end):
     print("")
     mtyLine = 11 - len(doc)
     for i in doc:
-        print(i, end='')
+        print(i)
     for i in range(mtyLine):
         print("")
     print("")
@@ -417,4 +417,39 @@ def error(log):
     print("")
     print("")
     input("Hit Enter to go back")
+
+
+def closePGR():
+    print("CIS220 Class Fall 2019                                 Help 0 | About i | Menu x")
+    print("")
+    print("")
+    print("")
+    print("{:^80}".format("Enigma Machine"))
+    print("")
+    print("")
+    print("{:^80}".format("Close"))
+    print("")
+    print("{:^80}".format("Thank you for using the Enigma Machine"))
+    print("{:^80}".format("by the team of"))
+    print("{:^80}".format("CIS220 Class Fall 2019"))
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    sel = input("Hit Enter to close\nOr choose an option to proceed:  ")
+    import sys
+    import os
+    if sel == "":
+        try:
+            os.system("clear")
+        except:
+            os.system("cls")
+        sys.exit()
+    return sel
 

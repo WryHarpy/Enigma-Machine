@@ -12,31 +12,34 @@ def encrypt():
     message, tempKey = encryption()
     key = tempKey.split("-")
     key = getKey(key)
-    encryptMessage = ''
+    encryptMessage = []
     # Plugboard
-    for i in message:
-        inbound = charSet.letterSet
-        outbound = charSet.plugBoard
-        index = inbound.index(i)
-        text = outbound[index]
-        # Wheel 1
-        for i in text:
-            inbound = charSet.plugBoard
-            outbound = eval("charSet.Rotor_{}".format(key[0]))
+    for s in range(len(message)):
+        tempMess = ""
+        for i in message[s]:
+            inbound = charSet.letterSet
+            outbound = charSet.plugBoard
             index = inbound.index(i)
             text = outbound[index]
-            # Wheel 2
+            # Wheel 1
             for i in text:
-                inbound = eval("charSet.Rotor_{}".format(key[0]))
-                outbound = eval("charSet.Rotor_{}".format(key[1]))
+                inbound = charSet.plugBoard
+                outbound = eval("charSet.Rotor_{}".format(key[0]))
                 index = inbound.index(i)
                 text = outbound[index]
-                # Wheel 3
+                # Wheel 2
                 for i in text:
-                    inbound = eval("charSet.Rotor_{}".format(key[1]))
-                    outbound = eval("charSet.Rotor_{}".format(key[2]))
+                    inbound = eval("charSet.Rotor_{}".format(key[0]))
+                    outbound = eval("charSet.Rotor_{}".format(key[1]))
                     index = inbound.index(i)
-                    encryptMessage = encryptMessage + outbound[index]
+                    text = outbound[index]
+                    # Wheel 3
+                    for i in text:
+                        inbound = eval("charSet.Rotor_{}".format(key[1]))
+                        outbound = eval("charSet.Rotor_{}".format(key[2]))
+                        index = inbound.index(i)
+                        tempMess = tempMess + outbound[index]
+        encryptMessage.append(tempMess)
     return encryptMessage, tempKey
 
 

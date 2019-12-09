@@ -3,9 +3,51 @@
 # 21 OCT 2019
 
 # This is the rotors and plugboard
-letterSet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz";?!.(), '
-plugBoard = 'wFWmXbJToaY;qs38"u2tHflCQiv y)N1p.P4Ee(d!hOzR5nDcxKM,V?jg07Uk6GIBAr9LZS'
-Rotor_1 = 'LmgNZa5BtT3qCIPRxV2jHiwe.8y(pQ)!70?k4uF;Dz6dOsKbYcEroWUfMGvJhl91ASn," X'
-Rotor_2 = 'IZ3JtAkRQo2zK,FlYb)TV4deE!PBO?pHc96yhj(L;u0NmCgs"5X1aMSr.UnwD78fqG ixWv'
-Rotor_3 = '3CFo9kW.Mg85fdZJlLh7cz"!XynBx1pamt2RO4TbYPQH)(I;qeS,GA0r?wvVEKDs6iU Nuj'
+letterSet = [' ', '!', '"', '(', ')', ',', '-', '.', '0',
+             '1', '2', '3', '4', '5', '6', '7', '8', '9',
+             ';', '?', 'A', 'B', 'C', 'D', 'E', 'F', 'G',
+             'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
+             'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y',
+             'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+             'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q',
+             'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+             '—']
+plugBoard = ['6', '(', 'N', 'L', 'g', 'A', 'j', 'f', '!',
+             'c', 'H', 'B', 'e', 'u', 'x', 'Y', '8', '0',
+             ')', 'G', 't', '.', '—', 'Z', 'J', 'S', 'O',
+             'U', 'y', ',', 'V', 'a', '1', '2', '3', '-',
+             'r', 'h', 'T', '7', '5', 'm', '9', 'Q', 'k',
+             'z', 'o', 'X', ' ', 'D', 'l', 'E', ';', 'v',
+             '?', 'W', 'M', 'P', 'C', 'q', 'K', 'I', '4',
+             'd', 'R', 's', 'i', 'n', 'w', 'F', 'p', 'b',
+             '"']
+Rotor_1 = ['q', 'E', 'Q', 'r', ')', 'W', 'u', '.', 'z',
+           'Y', 'U', '6', '4', '-', ' ', '—', 'h', 'o',
+           'C', 'T', 'g', '"', 'S', '7', 'I', 'a', 'm',
+           '5', 'j', 'V', ';', 'J', '8', 'P', 'A', 'v',
+           'Z', 't', '1', 'H', 'd', 'c', 'N', 'w', 'e',
+           'M', '0', 'X', 's', 'G', '9', 'b', 'k', '!',
+           'p', ',', 'l', 'y', 'f', 'B', 'i', 'n', 'K',
+           'x', 'D', '(', '2', '3', 'L', '?', 'F', 'R',
+           'O']
+Rotor_2 = ['a', 'J', 'Q', 'n', 'y', '1', 'L', '9', 'K',
+           'g', 'j', 'i', 'v', 'A', 'f', 'o', 'V', 'I',
+           'H', 'b', 'E', ',', 'u', '-', '0', 'W', 'c',
+           '2', 'T', '—', '6', 'w', 'O', '4', '"', 't',
+           '?', 'R', 'k', 'S', 'C', 'X', 'x', 'P', 'r',
+           'p', 'G', ' ', '7', 'q', '!', 'h', '8', '5',
+           'l', ';', 'm', 'U', 'B', 'Y', 'z', '.', 'd',
+           's', ')', 'Z', 'M', '(', 'D', 'F', '3', 'N',
+           'e']
+Rotor_3 = ['c', 'U', 'k', ' ', 'e', 'Q', '—', 'P', 'a',
+           ')', 'M', ',', 'v', 'm', 'S', '4', '9', 'Z',
+           '?', 'O', '5', 'G', 's', 'z', 'Y', ';', 'F',
+           'L', 'f', 'b', '6', 'y', 'V', 'R', '3', 't',
+           'u', 'h', 'W', 'j', 'I', '!', '"', 'B', 'd',
+           'o', 'g', '.', 'r', 'w', 'N', 'C', '2', 'K',
+           '(', 'T', 'J', 'H', '8', 'A', '1', '0', '7',
+           'q', 'i', 'x', 'l', '-', 'p', 'X', 'n', 'D',
+           'E']
+
+
 
