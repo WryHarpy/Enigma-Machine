@@ -447,9 +447,9 @@ def closePGR():
     import os
     if sel == "":
         try:
-            os.system("clear")
-        except:
             os.system("cls")
+        except:
+            os.system("clear")
         sys.exit()
     return sel
 
