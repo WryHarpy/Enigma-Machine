@@ -22,9 +22,9 @@ class Screen:
 
     def viewScr(self):
         try:
-            os.system("clear")
-        except:
             os.system("cls")
+        except:
+            os.system("clear")
         option = self.scr()
 
         return option
@@ -32,9 +32,9 @@ class Screen:
 
 def getOption(x):
     try:
-        os.system("clear")
-    except:
         os.system("cls")
+    except:
+        os.system("clear")
 
     option = eval(str(x)).viewScr()
 
